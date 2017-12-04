@@ -1,0 +1,1363 @@
+% Chapter 4
+
+\chapter{Results and Discussion} % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4}
+\FloatBarrier
+\section{Flow field analysis}
+Before injecting the logs, the flow field was analyzed. The flow field was simulated in STAR-CCM+ with DEM model turned off. Other flow field settings have been mentioned in Chapter \ref{Chapter3}. Water flow was simulated for 20 s of physical time.\\ 
+The velocity magnitude contour on a section that passes through center of submerged part of RDDP is shown in Figure \ref{fig:Vel_Mag_middle}. The flow accelerates around RDDP sweep. Water that is going below the sweep emerges behind it. There is a flow separation region behind the sweep and the pontoons. The velocity recovers behind the sweep. Corresponding pressure field is shown in Figure \ref{fig:Pressure_middle}. There is a stagnation point right in front of the RDDP sweep as expected. Water is brought to complete stop here.\\ 
+Vortices are shed from this region as shown in Figure \ref{fig:Vorticity_image}. Vorticity can also be seen along RDDP pontoons. There is a boundary layer developed on RDDP pontoons because of the no-slip wall boundary condition. This is the region where periodic vortices are being shed. The vortices diffuse far behind RDDP. Fast-Fourier transform of the velocity signal behind RDDP gives vortex shedding frequency of 0.6 Hz as shown in Figure \ref{fig:fft}. Vortices are being shed at every 1.6667 s. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Velocity_2}
+\caption{\label{fig:Vel_Mag_middle}Velocity Magnitude Contour on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Pressure_2}
+\caption{\label{fig:Pressure_middle}Pressure field on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Vorticity_2}
+\caption{\label{fig:Vorticity_Mag_middle}Vorticity Magnitude Contour on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/Vorticity_image}
+\caption{\label{fig:Vorticity_image}Vortices being shed from behind RDDP sweep.}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/fft2}
+\caption{\label{fig:fft}FFT analysis of velocity magnitude behind RDDP to obtain vortex shedding frequency.}
+\end{figure}
+
+\noindent Presence of vortices can also be seen from streamlines around RDDP as shown in Figure \ref{fig:Streamlines_middle_sideview}. The streamlines are originating from points on a section that passes through the center of RDDP. The streamlines are colored by velocity magnitude. Water at this level goes below the RDDP pontoons and starts to swirl up. Figure \ref{fig:Streamlines_middle_ISO} shows the same at an angle. Swirling up of water can be clearly seen. Figure \ref{fig:Streamlines_middle} shows the top view of the streamlines. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle_sideview}
+\caption{\label{fig:Streamlines_middle_sideview}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle_ISOview}
+\caption{\label{fig:Streamlines_middle_ISO}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle}
+\caption{\label{fig:Streamlines_middle}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+
+\noindent Flow field near RDDP very close to top of the domain is slightly different from that at the middle of RDDP. Water doesn't tend to go below RDDP pontoons and curl up. The streamlines can be seen in Figure \ref{fig:Streamlines_top_sideview}. Water accelerates around the sweep and then flows along the pontoons as seen in Figure \ref{fig:Streamlines_top}. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_top_sideview}
+\caption{\label{fig:Streamlines_top_sideview}Streamlines around RDDP very close to top of the domain.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_top}
+\caption{\label{fig:Streamlines_top}Streamlines around RDDP very close to top of the domain.}
+\end{figure}
+
+\noindent Streamlines around an iso-surface of RDDP is shown in Figure \ref{fig:Streamlines_isosurface}. This iso-surface of RDDP is just a projection of RDDP at 0.05 m wall distance. This is not an actual surface. Water flows around the pontoons and occasionally goes below. A recirculation zone can be seen at the bottom of RDDP. Water recirculates there and then emerges from behind the sweep.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_isosurface}
+\caption{\label{fig:Streamlines_isosurface}Streamlines on an iso-surface of RDDP.}
+\end{figure} 
+
+\newpage
+\FloatBarrier
+\section{Analysis of impact of logs on RDDP}
+Impact of logs (debris) on RDDP is now studied by turning on DEM settings on STAR-CCM+. Two sizes of logs (maintaining volume constant) are used for analysis. The lengths are 1 m and 2 m. For simplicity the lengths have been non-dimensionalized by diving the lengths with 2 m. The two cases now become 0.5L (1 m case) and 1L (2 m case). In addition to changing the log lengths, the flow velocity has also been varied in order: 0.5 m/s, 1 m/s and 2 m/s. Analysis is done for six combinations of log lengths and flow velocities as show in Table. Effects of log sizes and flow velocities on the forces on RDDP are studied.
+
+\begin{table}
+\centering
+\caption{Six combinations of log sizes and flow velocities of the analysis}
+\label{case combination}
+\begin{tabular}{|c|c|}
+\hline
+V = 0.5 m/s, Size: 0.5L & V = 0.5 m/s, Size: 1L \\ \hline
+V = 1.0 m/s, Size: 0.5L & V = 1.0 m/s, Size: 1L \\ \hline
+V = 2.0 m/s, Size: 0.5L & V = 2.0 m/s, Size: 1L \\\hline
+\end{tabular}
+\end{table}
+
+The logs are injected into the flow from fifteen locations upstream of RDDP as shown in Figure \ref{fig:Log_Positions}. These logs are of Size 1L. The numbering is to identify the log injection positions. The color scale shows the distance of centroids of the logs from front end of RDDP sweep. Henceforth, the logs will be numbered according to their injection position numbers as shown in Figure \ref{fig:Log_Positions}. The positions are chosen to avoid logs piling up on each other. Logs are injected in pairs of four (pair of three for the last three logs) starting from logs 1, 2, 3, and 4. The pairs are injected at different times to avoid overlap of logs which might have resulted in logs not being injected. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RF/Log_Positions}
+\caption{\label{fig:Log_Positions}Positions of log injection.}
+\end{figure} 
+
+\FloatBarrier
+\subsection{Forces on RDDP}
+Forces on RDDP due to impact of logs are measured for all six cases. Force magnitude and it's components are measured. A probability distribution function (PDF) of force is obtained for each case. While analyzing the forces on RDDP, unusually high forces were recorded of order of mega newtons. Acceleration due such high force was more than 1000g, where g is the gravitational acceleration. This is clearly not practical and is a result of numerical error in the computation. The reason maybe due default and recommended high DEM time scale parameter (time scale for calculating particle motion) of 0.2. With a high DEM time step, motion of the logs is not fully resolved and leads to higher acceleration of the logs. This results in a high force being calculated. These high forces have been filtered based on their acceleration. Different filters have been applied for different flow velocities. For $V = 0.5$ m/s, forces with acceleration greater than 1g are filtered. Forces greater than 1g in this case have a probability of nearly zero and thus are filtered. Since force (energy) is proportional to square of velocity, the filtering for higher velocities has been applied as a square of acceleration ratios. For $V = 1$ m/s, the filter is 4g and for $V = 2$ m/s, the filter is 16g. PDFs for each case are obtained after applying the filters. The PDFs are then compared to study the effect of log size and flow velocity on forces on RDDP.\\
+\subsubsection{Effect of log size on forces on RDDP}
+Effect of log size on forces on RDDP is studied. Two log sizes: 0.5L and 1L at three flow velocities are studied. Figure \ref{fig:RFSV0p5} shows the comparison of PDFs for force magnitude for different sizes when V = 0.5 m/s. As the size increases, the mean, median and max force increase. The probability of higher forces also increases with size. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V0p5_Size}
+\caption{\label{fig:RFSV0p5}Comparison of PDFs of force magnitude for two sizes and V = 0.5 m/s.}
+\end{figure} 
+
+\noindent Figure \ref{fig:RFSV1p0} shows effect of size on forces on RDDP for V = 1 m/s. The behavior is different from the earlier V = 0.5 m/s cases because the logs are injected at different times for both sizes to avoid overlap. Logs do not interact at the same time in both cases. Number of logs impacting RDDP at any time is different in both cases. This causes the forces to be calculated at different times and the probability also changes. The median and max force increase with size but the variation is not large. Mean force is less for the higher size in this case. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V1p0_Size}
+\caption{\label{fig:RFSV1p0}Comparison of PDFs of force magnitude for two sizes and V = 1.0 m/s.}
+\end{figure} 
+
+\noindent Figure \ref{fig:RFSV2p0} shows effect of size on forces on RDDP for V = 2 m/s. The distributions are very similar to each other. There is a slight variation between the mean, median and max forces. This is again due to different injection times for the two sizes. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V2p0_Size}
+\caption{\label{fig:RFSV2p0}Comparison of PDFs of force magnitude for two sizes and V = 2.0 m/s.}
+\end{figure} 
+
+\noindent Figures \ref{fig:RFMeanForce_Size}, \ref{fig:RFMedianForce_Size}, and \ref{fig:RFMaxForce_Size} show variation of mean, median, and maximum of force magnitude with size for different velocities respectively. It can be seen that the behavior is not consistent. This is due to different injection times for each case. The variation of mean, median, and maximum of force magnitude is not large between the two sizes. It is safe to say that changing the lengths of the logs while maintaining the volume constant has little effect on the forces on RDDP. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MeanForce_Size}
+\caption{\label{fig:RFMeanForce_Size}Variation of mean force magnitude with log size.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MedianForce_Size}
+\caption{\label{fig:RFMedianForce_Size}Variation of median force magnitude with log size.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MaxForce_Size}
+\caption{\label{fig:RFMaxForce_Size}Variation of maximum force magnitude with log size.}
+\end{figure} 
+\FloatBarrier
+\subsubsection{Effect of flow velocity on forces on RDDP}
+Effect of three flow velocities on forces on RDDP  for two log sizes is studied. Flow velocities of 0.5 m/s, 1 m/s, and 2 m/s are used for this study.\\
+Figure \ref{fig:RFSize0p5L_V} shows comparison of PDFs of force magnitudes for three velocities with log size 0.5L. As the flow velocity increases, the probability of larger forces increases. The mean, median, and maximum of force magnitude also increases. As the flow velocity increases, the momentum of logs increases, this increases the impact forces on RDDP. The probability of smaller forces increases as the flow velocity decreases. A similar behavior is seen for log size 1L as shown in Figure \ref{fig:RFSize1L_V}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/Size0p5L_V}
+\caption{\label{fig:RFSize0p5L_V}Comparison of PDFs of force magnitude for Three velocities with log size 0.5L.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/Size1L_V}
+\caption{\label{fig:RFSize1L_V}Comparison of PDFs of force magnitude for Three velocities with log size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:RDDP_MeanForce_V}, \ref{fig:RDDP_MeanForce_V}, and \ref{fig:RDDP_MeanForce_V} show variation of mean, median, and maximum of force magnitude with flow velocity for different log sizes respectively. As explained earlier, as the flow velocity increases, the momentum of logs increases and so does the impact force. The variation is quadratic as kinetic energy squares with velocity. The mean, median, and maximum force magnitude increase with increasing flow velocity for both log sizes. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MeanForce_V}
+\caption{\label{fig:RDDP_MeanForce_V}Variation of mean force magnitude with flow velocity.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MedianForce_V}
+\caption{\label{fig:RDDP_MeanForce_V}Variation of median force magnitude with flow velocity.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MaxForce_V}
+\caption{\label{fig:RDDP_MeanForce_V}Variation of maximum force magnitude with flow velocity.}
+\end{figure}
+\FloatBarrier
+\subsection{Forces on logs}
+Forces calculated on logs include forces due to impact with RDDP and hydrodynamic forces. As before, the PDFs of force distribution are obtained for each log and compared to obtain effects of size and flow velocity effects on forces. 
+\FloatBarrier
+\subsubsection{Log1}
+This is the log that is injected from location 1 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 2, 3, and 4.\\ 
+Figure \ref{fig:V0p5Log01_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log1 of size 0.5L has higher probability of smaller  than mean forces than that of size 0.5L.  Probability of force being around the mean forces is higher for size 1L than size 0.5L. The variation of PDFs is because of different injection times. The amount of time any log interacts with RDDP is different for each case. This causes the PDFs to not follow any expected behavior.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/V0p5Log01_Size}
+\caption{\label{fig:V0p5Log01_Size}Comparison of PDFs of forces on Log1 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log01_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The behavior is similar to that at V = 0.5 m/s.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/V1p0Log01_Size}
+\caption{\label{fig:V1p0Log01_Size}Comparison of PDFs of forces on Log1 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log01_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. The PDFs are very similar to each other, almost overlapping. This is different from earlier mentioned cases again because of different injection times. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/V2p0Log01_Size}
+\caption{\label{fig:V2p0Log01_Size}Comparison of PDFs of forces on Log1 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log01_Size}, \ref{fig:MedianForce_Log01_Size}, and \ref{fig:MaxForce_Log01_Size} show variation of mean, median, and maximum of magnitude of force on Log1 at different log sizes. Mean and median forces do not vary much with log size. Maximum of force magnitude increases but again the variation is very small. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MeanForce_Log01_Size}
+\caption{\label{fig:MeanForce_Log01_Size}Variation of mean force magnitude with log size for Log1.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MedianForce_Log01_Size}
+\caption{\label{fig:MedianForce_Log01_Size}Variation of median force magnitude with log size for Log1.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MaxForce_Log01_Size}
+\caption{\label{fig:MaxForce_Log01_Size}Variation of maximum force magnitude with log size for Log1.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog01_V} and \ref{fig:S1LLog01_V} show comparison of PDFs of magnitude of forces on Log1 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/S0p5LLog01_V}
+\caption{\label{fig:S0p5LLog01_V}Comparison of PDFs of forces on Log1 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/S1LLog01_V}
+\caption{\label{fig:S1LLog01_V}Comparison of PDFs of forces on Log1 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log01_V}, \ref{fig:MedianForce_Log01_V}, and \ref{fig:MaxForce_Log01_V} show variation of mean, median, and maximum of magnitude of force on Log1 at different flow velocities. The mean and maximum force increase with increase in flow velocity. Variation of median force is not consistent because of injection times.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MeanForce_Log01_V}
+\caption{\label{fig:MeanForce_Log01_V}Variation of mean force magnitude with flow velocity for Log1.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MedianForce_Log01_V}
+\caption{\label{fig:MedianForce_Log01_V}Variation of median force magnitude with flow velocity for Log1.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log01/MaxForce_Log01_V}
+\caption{\label{fig:MaxForce_Log01_V}Variation of maximum force magnitude with flow velocity for Log1.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log2}
+This is the log that is injected from location 2 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 1, 3, and 4.\\ 
+Figure \ref{fig:V0p5Log02_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log2 of size 0.5L has higher probability of smaller  than mean forces than that of size 0.5L.  Probability of force being around the mean forces is higher for size 1L than size 0.5L. The variation of PDFs is because of different injection times. The amount of time any log interacts with RDDP is different for each case. This causes the PDFs to not follow any expected behavior.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/V0p5Log02_Size}
+\caption{\label{fig:V0p5Log02_Size}Comparison of PDFs of forces on Log2 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log02_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The behavior is similar to that at V = 0.5 m/s.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/V1p0Log02_Size}
+\caption{\label{fig:V1p0Log02_Size}Comparison of PDFs of forces on Log2 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log02_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 0.5L than that for size 1L. This is different from earlier mentioned cases again because of different injection times. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/V2p0Log02_Size}
+\caption{\label{fig:V2p0Log02_Size}Comparison of PDFs of forces on Log2 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log02_Size}, \ref{fig:MedianForce_Log02_Size}, and \ref{fig:MaxForce_Log02_Size} show variation of mean, median, and maximum of magnitude of force on Log2 at different log sizes. Mean and median forces do not vary much with log size. Maximum force shows a decreasing trend but this is because since log of size 0.5L has a larger radius than that of size 1L, the interaction with RDDP is different. Larger part of log of size 0.5L  is in contact with RDDP than that of size 1L. This is the reason for decrease in maximum force with size. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MeanForce_Log02_Size}
+\caption{\label{fig:MeanForce_Log02_Size}Variation of mean force magnitude with log size for Log2.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MedianForce_Log02_Size}
+\caption{\label{fig:MedianForce_Log02_Size}Variation of median force magnitude with log size for Log2.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MaxForce_Log02_Size}
+\caption{\label{fig:MaxForce_Log02_Size}Variation of maximum force magnitude with log size for Log2.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog02_V} and \ref{fig:S1LLog02_V} show comparison of PDFs of magnitude of forces on Log2 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/S0p5LLog02_V}
+\caption{\label{fig:S0p5LLog02_V}Comparison of PDFs of forces on Log2 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/S1LLog02_V}
+\caption{\label{fig:S1LLog02_V}Comparison of PDFs of forces on Log2 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log02_V}, \ref{fig:MedianForce_Log02_V}, and \ref{fig:MaxForce_Log02_V} show variation of mean, median, and maximum of magnitude of force on Log2 at different flow velocities. All three quantities show an increasing trend with velocity. The variation is quadratic. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MeanForce_Log02_V}
+\caption{\label{fig:MeanForce_Log02_V}Variation of mean force magnitude with flow velocity for Log2.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MedianForce_Log02_V}
+\caption{\label{fig:MedianForce_Log02_V}Variation of median force magnitude with flow velocity for Log2.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log02/MaxForce_Log02_V}
+\caption{\label{fig:MaxForce_Log02_V}Variation of maximum force magnitude with flow velocity for Log2.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log3}
+This is the log that is injected from location 3 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 1, 2, and 4.\\ 
+Figure \ref{fig:V0p5Log03_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log3 of size 0.5L has higher probability of forces being around the mean than that for size 1L. Log of size 1L has higher probability of forces being large.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/V0p5Log03_Size}
+\caption{\label{fig:V0p5Log03_Size}Comparison of PDFs of forces on Log3 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log03_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The PDFs are very similar for forces larger than mean force. Log of size 1L has forces greater than 500N. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/V1p0Log03_Size}
+\caption{\label{fig:V1p0Log03_Size}Comparison of PDFs of forces on Log3 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log03_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 1L than that for size 1L. Log of size 0.5L has higher probability of forces being large.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/V2p0Log03_Size}
+\caption{\label{fig:V2p0Log03_Size}Comparison of PDFs of forces on Log3 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log03_Size}, \ref{fig:MedianForce_Log03_Size}, and \ref{fig:MaxForce_Log03_Size} show variation of mean, median, and maximum of magnitude of force on Log3 at different log sizes. Mean and median forces do not vary much with log size. Maximum force shows a decreasing trend but this is because since log of size 0.5L has a larger radius than that of size 1L, the interaction with RDDP is different. Larger part of log of size 0.5L  is in contact with RDDP than that of size 1L. This is the reason for decrease in maximum force with size. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MeanForce_Log03_Size}
+\caption{\label{fig:MeanForce_Log03_Size}Variation of mean force magnitude with log size for Log3.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MedianForce_Log03_Size}
+\caption{\label{fig:MedianForce_Log03_Size}Variation of median force magnitude with log size for Log3.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MaxForce_Log03_Size}
+\caption{\label{fig:MaxForce_Log03_Size}Variation of maximum force magnitude with log size for Log3.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog03_V} and \ref{fig:S1LLog03_V} show comparison of PDFs of magnitude of forces on Log3 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/S0p5LLog03_V}
+\caption{\label{fig:S0p5LLog03_V}Comparison of PDFs of forces on Log3 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/S1LLog03_V}
+\caption{\label{fig:S1LLog03_V}Comparison of PDFs of forces on Log3 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log03_V}, \ref{fig:MedianForce_Log03_V}, and \ref{fig:MaxForce_Log03_V} show variation of mean, median, and maximum of magnitude of force on Log3 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for log size 0.5L increases with velocity but for log size 1L it increases at first and then decreases. The variation is not very large.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MeanForce_Log03_V}
+\caption{\label{fig:MeanForce_Log03_V}Variation of mean force magnitude with flow velocity for Log3.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MedianForce_Log03_V}
+\caption{\label{fig:MedianForce_Log03_V}Variation of median force magnitude with flow velocity for Log3.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log03/MaxForce_Log03_V}
+\caption{\label{fig:MaxForce_Log03_V}Variation of maximum force magnitude with flow velocity for Log3.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log4}
+This is the log that is injected from location 4 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 1, 2, and 3.\\ 
+Figure \ref{fig:V0p5Log04_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log4 of size 0.5L has higher probability of forces being around the mean than that for size 1L. Log of size 1L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/V0p5Log04_Size}
+\caption{\label{fig:V0p5Log04_Size}Comparison of PDFs of forces on Log4 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log04_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log4 of size 1L has higher probability of force being around the mean than that for size 0.5L. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/V1p0Log04_Size}
+\caption{\label{fig:V1p0Log04_Size}Comparison of PDFs of forces on Log4 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log04_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 1L than that for size 1L. Log of size 0.5L has higher probability of forces being large.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/V2p0Log04_Size}
+\caption{\label{fig:V2p0Log04_Size}Comparison of PDFs of forces on Log4 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log04_Size}, \ref{fig:MedianForce_Log04_Size}, and \ref{fig:MaxForce_Log04_Size} show variation of mean, median, and maximum of magnitude of force on Log4 at different log sizes. There is no consistency in variation of mean and median force with log size. Maximum force shows an increasing trend with velocity but the variation is very small for V = 0.5 m/s and V = 1 m/s. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MeanForce_Log04_Size}
+\caption{\label{fig:MeanForce_Log04_Size}Variation of mean force magnitude with log size for Log4.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MedianForce_Log04_Size}
+\caption{\label{fig:MedianForce_Log04_Size}Variation of median force magnitude with log size for Log4.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MaxForce_Log04_Size}
+\caption{\label{fig:MaxForce_Log04_Size}Variation of maximum force magnitude with log size for Log4.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog04_V} and \ref{fig:S1LLog04_V} show comparison of PDFs of magnitude of forces on Log4 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/S0p5LLog04_V}
+\caption{\label{fig:S0p5LLog04_V}Comparison of PDFs of forces on Log4 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/S1LLog04_V}
+\caption{\label{fig:S1LLog04_V}Comparison of PDFs of forces on Log4 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log04_V}, \ref{fig:MedianForce_Log04_V}, and \ref{fig:MaxForce_Log04_V} show variation of mean, median, and maximum of magnitude of force on Log4 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for log size 0.5L shows a decreasing trend.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MeanForce_Log04_V}
+\caption{\label{fig:MeanForce_Log04_V}Variation of mean force magnitude with flow velocity for Log4.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MedianForce_Log04_V}
+\caption{\label{fig:MedianForce_Log04_V}Variation of median force magnitude with flow velocity for Log4.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log04/MaxForce_Log04_V}
+\caption{\label{fig:MaxForce_Log04_V}Variation of maximum force magnitude with flow velocity for Log4.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log5}
+This is the log that is injected from location 5 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 6, 7, and 8.\\ 
+Figure \ref{fig:V0p5Log05_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log5 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/V0p5Log05_Size}
+\caption{\label{fig:V0p5Log05_Size}Comparison of PDFs of forces on Log5 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log05_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The PDFs are very similar to each other with Log5 of size 1L having higher probability of force being around the mean.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/V1p0Log05_Size}
+\caption{\label{fig:V1p0Log05_Size}Comparison of PDFs of forces on Log5 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log05_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 1L than that for size 1L. Log of size 0.5L has higher probability of forces being large.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/V2p0Log05_Size}
+\caption{\label{fig:V2p0Log05_Size}Comparison of PDFs of forces on Log5 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log05_Size}, \ref{fig:MedianForce_Log05_Size}, and \ref{fig:MaxForce_Log05_Size} show variation of mean, median, and maximum of magnitude of force on Log5 at different log sizes. Mean force increases with size but the variation is very small. Median and maximum forces do not show a consistent behavior. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MeanForce_Log05_Size}
+\caption{\label{fig:MeanForce_Log05_Size}Variation of mean force magnitude with log size for Log5.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MedianForce_Log05_Size}
+\caption{\label{fig:MedianForce_Log05_Size}Variation of median force magnitude with log size for Log5.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MaxForce_Log05_Size}
+\caption{\label{fig:MaxForce_Log05_Size}Variation of maximum force magnitude with log size for Log5.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog05_V} and \ref{fig:S1LLog05_V} show comparison of PDFs of magnitude of forces on Log5 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/S0p5LLog05_V}
+\caption{\label{fig:S0p5LLog05_V}Comparison of PDFs of forces on Log5 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/S1LLog05_V}
+\caption{\label{fig:S1LLog05_V}Comparison of PDFs of forces on Log4 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log05_V}, \ref{fig:MedianForce_Log05_V}, and \ref{fig:MaxForce_Log05_V} show variation of mean, median, and maximum of magnitude of force on Log5 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for increases at first but then decreases. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MeanForce_Log05_V}
+\caption{\label{fig:MeanForce_Log05_V}Variation of mean force magnitude with flow velocity for Log5.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MedianForce_Log05_V}
+\caption{\label{fig:MedianForce_Log05_V}Variation of median force magnitude with flow velocity for Log5.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log05/MaxForce_Log05_V}
+\caption{\label{fig:MaxForce_Log05_V}Variation of maximum force magnitude with flow velocity for Log5.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log6}
+This is the log that is injected from location 6 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 5, 7, and 8.\\ 
+Figure \ref{fig:V0p5Log06_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log6 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/V0p5Log06_Size}
+\caption{\label{fig:V0p5Log06_Size}Comparison of PDFs of forces on Log6 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log06_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The PDFs are very similar to each other with Log6 of size 0.5L having higher probability of forces being lower than the mean.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/V1p0Log06_Size}
+\caption{\label{fig:V1p0Log06_Size}Comparison of PDFs of forces on Log6 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log06_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 1L than that for size 0.5L. Apart from this, the PDFs are very similar to each other. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/V2p0Log06_Size}
+\caption{\label{fig:V2p0Log06_Size}Comparison of PDFs of forces on Log6 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log06_Size}, \ref{fig:MedianForce_Log06_Size}, and \ref{fig:MaxForce_Log06_Size} show variation of mean, median, and maximum of magnitude of force on Log6 at different log sizes. Mean, median and maximum forces do not vary much.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MeanForce_Log06_Size}
+\caption{\label{fig:MeanForce_Log06_Size}Variation of mean force magnitude with log size for Log6.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MedianForce_Log06_Size}
+\caption{\label{fig:MedianForce_Log06_Size}Variation of median force magnitude with log size for Log6.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MaxForce_Log06_Size}
+\caption{\label{fig:MaxForce_Log06_Size}Variation of maximum force magnitude with log size for Log6.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog06_V} and \ref{fig:S1LLog06_V} show comparison of PDFs of magnitude of forces on Log6 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/S0p5LLog06_V}
+\caption{\label{fig:S0p5LLog06_V}Comparison of PDFs of forces on Log6 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/S1LLog06_V}
+\caption{\label{fig:S1LLog06_V}Comparison of PDFs of forces on Log6 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log06_V}, \ref{fig:MedianForce_Log06_V}, and \ref{fig:MaxForce_Log06_V} show variation of mean, median, and maximum of magnitude of force on Log6 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for increases at first but then decreases but the variation is very small. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MeanForce_Log06_V}
+\caption{\label{fig:MeanForce_Log06_V}Variation of mean force magnitude with flow velocity for Log6.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MedianForce_Log06_V}
+\caption{\label{fig:MedianForce_Log06_V}Variation of median force magnitude with flow velocity for Log6.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log06/MaxForce_Log06_V}
+\caption{\label{fig:MaxForce_Log06_V}Variation of maximum force magnitude with flow velocity for Log6.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log7}
+This is the log that is injected from location 7 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 5, 6, and 8.\\ 
+Figure \ref{fig:V0p5Log07_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log7 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/V0p5Log07_Size}
+\caption{\label{fig:V0p5Log07_Size}Comparison of PDFs of forces on Log7 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log07_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The PDFs are very similar to each other with Log7 of size 1L having higher probability of forces being higher than the mean.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/V1p0Log07_Size}
+\caption{\label{fig:V1p0Log07_Size}Comparison of PDFs of forces on Log7 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log07_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 0.5L than that for size 0.5L. Log7 of size 1L has higher probability of force being large.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/V2p0Log07_Size}
+\caption{\label{fig:V2p0Log07_Size}Comparison of PDFs of forces on Log7 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log07_Size}, \ref{fig:MedianForce_Log07_Size}, and \ref{fig:MaxForce_Log07_Size} show variation of mean, median, and maximum of magnitude of force on Log7 at different log sizes. Median force does not have a consistent behavior. Mean and Maximum forces remain fairly constant for both cases.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MeanForce_Log07_Size}
+\caption{\label{fig:MeanForce_Log07_Size}Variation of mean force magnitude with log size for Log7.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MedianForce_Log07_Size}
+\caption{\label{fig:MedianForce_Log07_Size}Variation of median force magnitude with log size for Log7.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MaxForce_Log07_Size}
+\caption{\label{fig:MaxForce_Log07_Size}Variation of maximum force magnitude with log size for Log7.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog07_V} and \ref{fig:S1LLog07_V} show comparison of PDFs of magnitude of forces on Log7 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/S0p5LLog07_V}
+\caption{\label{fig:S0p5LLog07_V}Comparison of PDFs of forces on Log7 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/S1LLog07_V}
+\caption{\label{fig:S1LLog07_V}Comparison of PDFs of forces on Log7 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log07_V}, \ref{fig:MedianForce_Log07_V}, and \ref{fig:MaxForce_Log07_V} show variation of mean, median, and maximum of magnitude of force on Log7 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for increases with velocity for size 0.5L but decreases for size 1L.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MeanForce_Log07_V}
+\caption{\label{fig:MeanForce_Log07_V}Variation of mean force magnitude with flow velocity for Log7.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MedianForce_Log07_V}
+\caption{\label{fig:MedianForce_Log07_V}Variation of median force magnitude with flow velocity for Log7.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log07/MaxForce_Log07_V}
+\caption{\label{fig:MaxForce_Log07_V}Variation of maximum force magnitude with flow velocity for Log7.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log8}
+This is the log that is injected from location 8 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 5, 6, and 7.\\ 
+Figure \ref{fig:V0p5Log08_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log8 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/V0p5Log08_Size}
+\caption{\label{fig:V0p5Log08_Size}Comparison of PDFs of forces on Log8 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log08_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log8 of size 1L has higher probability of force being around the mean. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/V1p0Log08_Size}
+\caption{\label{fig:V1p0Log08_Size}Comparison of PDFs of forces on Log8 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log08_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Probability of forces being around the mean is higher for log size 0.5L than that for size 0.5L. Log8 of size 1L has higher probability of force being large.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/V2p0Log08_Size}
+\caption{\label{fig:V2p0Log08_Size}Comparison of PDFs of forces on Log8 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log08_Size}, \ref{fig:MedianForce_Log08_Size}, and \ref{fig:MaxForce_Log08_Size} show variation of mean, median, and maximum of magnitude of force on Log8 at different log sizes. Mean force remains fairly constant. Median force shows inconsistent variation. Maximum force shows an increasing trend. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MeanForce_Log08_Size}
+\caption{\label{fig:MeanForce_Log08_Size}Variation of mean force magnitude with log size for Log8.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MedianForce_Log08_Size}
+\caption{\label{fig:MedianForce_Log08_Size}Variation of median force magnitude with log size for Log8.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MaxForce_Log08_Size}
+\caption{\label{fig:MaxForce_Log08_Size}Variation of maximum force magnitude with log size for Log8.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog08_V} and \ref{fig:S1LLog08_V} show comparison of PDFs of magnitude of forces on Log8 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/S0p5LLog08_V}
+\caption{\label{fig:S0p5LLog08_V}Comparison of PDFs of forces on Log8 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/S1LLog08_V}
+\caption{\label{fig:S1LLog08_V}Comparison of PDFs of forces on Log8 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log08_V}, \ref{fig:MedianForce_Log08_V}, and \ref{fig:MaxForce_Log08_V} show variation of mean, median, and maximum of magnitude of force on Log8 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force for decreases with velocity for size 1L but increases and then decreases for size 0.5L.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MeanForce_Log08_V}
+\caption{\label{fig:MeanForce_Log08_V}Variation of mean force magnitude with flow velocity for Log8.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MedianForce_Log08_V}
+\caption{\label{fig:MedianForce_Log08_V}Variation of median force magnitude with flow velocity for Log8.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log08/MaxForce_Log08_V}
+\caption{\label{fig:MaxForce_Log08_V}Variation of maximum force magnitude with flow velocity for Log8.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log9}
+This is the log that is injected from location 9 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 10, 11, and 12.\\ 
+Figure \ref{fig:V0p5Log09_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log9 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/V0p5Log09_Size}
+\caption{\label{fig:V0p5Log09_Size}Comparison of PDFs of forces on Log9 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log09_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. The PDFs are very similar to each other but the minimum force for size 0.5L is less than that for size 1L.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/V1p0Log09_Size}
+\caption{\label{fig:V1p0Log09_Size}Comparison of PDFs of forces on Log9 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log09_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. The PDFs are very similar to each other.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/V2p0Log09_Size}
+\caption{\label{fig:V2p0Log09_Size}Comparison of PDFs of forces on Log9 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log09_Size}, \ref{fig:MedianForce_Log09_Size}, and \ref{fig:MaxForce_Log09_Size} show variation of mean, median, and maximum of magnitude of force on Log9 at different log sizes. Mean and maximum forces remain fairly constant. Median force shows inconsistent variation. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MeanForce_Log09_Size}
+\caption{\label{fig:MeanForce_Log09_Size}Variation of mean force magnitude with log size for Log9.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MedianForce_Log09_Size}
+\caption{\label{fig:MedianForce_Log09_Size}Variation of median force magnitude with log size for Log9.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MaxForce_Log09_Size}
+\caption{\label{fig:MaxForce_Log09_Size}Variation of maximum force magnitude with log size for Log9.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog09_V} and \ref{fig:S1LLog09_V} show comparison of PDFs of magnitude of forces on Log9 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/S0p5LLog09_V}
+\caption{\label{fig:S0p5LLog09_V}Comparison of PDFs of forces on Log9 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/S1LLog09_V}
+\caption{\label{fig:S1LLog09_V}Comparison of PDFs of forces on Log9 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log09_V}, \ref{fig:MedianForce_Log09_V}, and \ref{fig:MaxForce_Log09_V} show variation of mean, median, and maximum of magnitude of force on Log9 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force decreases with velocity.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MeanForce_Log09_V}
+\caption{\label{fig:MeanForce_Log09_V}Variation of mean force magnitude with flow velocity for Log9.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MedianForce_Log09_V}
+\caption{\label{fig:MedianForce_Log09_V}Variation of median force magnitude with flow velocity for Log9.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log09/MaxForce_Log09_V}
+\caption{\label{fig:MaxForce_Log09_V}Variation of maximum force magnitude with flow velocity for Log9.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log10}
+This is the log that is injected from location 10 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 9, 11, and 12.\\ 
+Figure \ref{fig:V0p5Log10_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log10 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/V0p5Log10_Size}
+\caption{\label{fig:V0p5Log10_Size}Comparison of PDFs of forces on Log10 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log10_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log10 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log10 of size 0.5L has higher probability of large and small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/V1p0Log10_Size}
+\caption{\label{fig:V1p0Log10_Size}Comparison of PDFs of forces on Log10 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log10_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Log10 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log10 of size 0.5L has higher probability of large forces and size 1L has higher probability of small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/V2p0Log10_Size}
+\caption{\label{fig:V2p0Log10_Size}Comparison of PDFs of forces on Log10 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log10_Size}, \ref{fig:MedianForce_Log10_Size}, and \ref{fig:MaxForce_Log10_Size} show variation of mean, median, and maximum of magnitude of force on Log10 at different log sizes. Mean and maximum forces remain fairly constant. Median force shows a decreasing trend.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MeanForce_Log10_Size}
+\caption{\label{fig:MeanForce_Log10_Size}Variation of mean force magnitude with log size for Log10.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MedianForce_Log10_Size}
+\caption{\label{fig:MedianForce_Log10_Size}Variation of median force magnitude with log size for Log10.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MaxForce_Log10_Size}
+\caption{\label{fig:MaxForce_Log10_Size}Variation of maximum force magnitude with log size for Log10.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog10_V} and \ref{fig:S1LLog10_V} show comparison of PDFs of magnitude of forces on Log10 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/S0p5LLog10_V}
+\caption{\label{fig:S0p5LLog10_V}Comparison of PDFs of forces on Log10 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/S1LLog10_V}
+\caption{\label{fig:S1LLog10_V}Comparison of PDFs of forces on Log10 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log10_V}, \ref{fig:MedianForce_Log10_V}, and \ref{fig:MaxForce_Log10_V} show variation of mean, median, and maximum of magnitude of force on Log10 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force decreases with velocity.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MeanForce_Log10_V}
+\caption{\label{fig:MeanForce_Log10_V}Variation of mean force magnitude with flow velocity for Log10.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MedianForce_Log10_V}
+\caption{\label{fig:MedianForce_Log10_V}Variation of median force magnitude with flow velocity for Log10.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log10/MaxForce_Log10_V}
+\caption{\label{fig:MaxForce_Log10_V}Variation of maximum force magnitude with flow velocity for Log10.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log11}
+This is the log that is injected from location 11 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 9, 10, and 12.\\ 
+Figure \ref{fig:V0p5Log11_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log11 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/V0p5Log11_Size}
+\caption{\label{fig:V0p5Log11_Size}Comparison of PDFs of forces on Log11 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log11_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log11 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log11 of size 0.5L has higher probability of large and small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/V1p0Log11_Size}
+\caption{\label{fig:V1p0Log11_Size}Comparison of PDFs of forces on Log11 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log11_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Log11 of size 0.5L has higher probability of force being around the mean than that of size 0.5L. Log11 of size 1L has higher probability of large forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/V2p0Log11_Size}
+\caption{\label{fig:V2p0Log11_Size}Comparison of PDFs of forces on Log11 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log11_Size}, \ref{fig:MedianForce_Log11_Size}, and \ref{fig:MaxForce_Log11_Size} show variation of mean, median, and maximum of magnitude of force on Log11 at different log sizes. Mean force shows inconsistent variation. Median force decreases with log size. Maximum force shows an increasing trend with log size.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MeanForce_Log11_Size}
+\caption{\label{fig:MeanForce_Log11_Size}Variation of mean force magnitude with log size for Log11.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MedianForce_Log11_Size}
+\caption{\label{fig:MedianForce_Log11_Size}Variation of median force magnitude with log size for Log11.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MaxForce_Log11_Size}
+\caption{\label{fig:MaxForce_Log11_Size}Variation of maximum force magnitude with log size for Log11.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog11_V} and \ref{fig:S1LLog11_V} show comparison of PDFs of magnitude of forces on Log11 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/S0p5LLog11_V}
+\caption{\label{fig:S0p5LLog11_V}Comparison of PDFs of forces on Log11 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/S1LLog11_V}
+\caption{\label{fig:S1LLog11_V}Comparison of PDFs of forces on Log11 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log11_V}, \ref{fig:MedianForce_Log11_V}, and \ref{fig:MaxForce_Log11_V} show variation of mean, median, and maximum of magnitude of force on Log11 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force decreases with velocity.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MeanForce_Log11_V}
+\caption{\label{fig:MeanForce_Log11_V}Variation of mean force magnitude with flow velocity for Log11.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MedianForce_Log11_V}
+\caption{\label{fig:MedianForce_Log11_V}Variation of median force magnitude with flow velocity for Log11.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log11/MaxForce_Log11_V}
+\caption{\label{fig:MaxForce_Log11_V}Variation of maximum force magnitude with flow velocity for Log11.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log12}
+This is the log that is injected from location 12 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 9, 10, and 11.\\ 
+Figure \ref{fig:V0p5Log12_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log12 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/V0p5Log12_Size}
+\caption{\label{fig:V0p5Log12_Size}Comparison of PDFs of forces on Log12 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log12_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log12 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log12 of size 0.5L has higher probability of large and small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/V1p0Log12_Size}
+\caption{\label{fig:V1p0Log12_Size}Comparison of PDFs of forces on Log12 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log12_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Log12 of size 0.5L has higher probability of force being around the mean than that of size 0.5L.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/V2p0Log12_Size}
+\caption{\label{fig:V2p0Log12_Size}Comparison of PDFs of forces on Log12 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log12_Size}, \ref{fig:MedianForce_Log12_Size}, and \ref{fig:MaxForce_Log12_Size} show variation of mean, median, and maximum of magnitude of force on Log12 at different log sizes. Mean and maximum force remain fairly constant. Median force decreases with log size. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MeanForce_Log12_Size}
+\caption{\label{fig:MeanForce_Log12_Size}Variation of mean force magnitude with log size for Log12.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MedianForce_Log12_Size}
+\caption{\label{fig:MedianForce_Log12_Size}Variation of median force magnitude with log size for Log12.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MaxForce_Log12_Size}
+\caption{\label{fig:MaxForce_Log12_Size}Variation of maximum force magnitude with log size for Log12.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog12_V} and \ref{fig:S1LLog12_V} show comparison of PDFs of magnitude of forces on Log12 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/S0p5LLog12_V}
+\caption{\label{fig:S0p5LLog12_V}Comparison of PDFs of forces on Log12 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/S1LLog12_V}
+\caption{\label{fig:S1LLog12_V}Comparison of PDFs of forces on Log12 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log12_V}, \ref{fig:MedianForce_Log12_V}, and \ref{fig:MaxForce_Log12_V} show variation of mean, median, and maximum of magnitude of force on Log12 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. Median force decreases with velocity.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MeanForce_Log12_V}
+\caption{\label{fig:MeanForce_Log12_V}Variation of mean force magnitude with flow velocity for Log12.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MedianForce_Log12_V}
+\caption{\label{fig:MedianForce_Log12_V}Variation of median force magnitude with flow velocity for Log12.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log12/MaxForce_Log12_V}
+\caption{\label{fig:MaxForce_Log12_V}Variation of maximum force magnitude with flow velocity for Log12.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log13}
+This is the log that is injected from location 13 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 14 and 15.\\ 
+Figure \ref{fig:V0p5Log13_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log13 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/V0p5Log13_Size}
+\caption{\label{fig:V0p5Log13_Size}Comparison of PDFs of forces on Log13 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log13_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log13 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log13 of size 0.5L has higher probability of large and small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/V1p0Log13_Size}
+\caption{\label{fig:V1p0Log13_Size}Comparison of PDFs of forces on Log13 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log13_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. The PDFs are very similar to each other. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/V2p0Log13_Size}
+\caption{\label{fig:V2p0Log13_Size}Comparison of PDFs of forces on Log13 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log13_Size}, \ref{fig:MedianForce_Log13_Size}, and \ref{fig:MaxForce_Log13_Size} show variation of mean, median, and maximum of magnitude of force on Log13 at different log sizes. Mean force decreases with log size. Median force shows inconsistent variation. Maximum force remains fairly constant. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MeanForce_Log13_Size}
+\caption{\label{fig:MeanForce_Log13_Size}Variation of mean force magnitude with log size for Log13.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MedianForce_Log13_Size}
+\caption{\label{fig:MedianForce_Log13_Size}Variation of median force magnitude with log size for Log13.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MaxForce_Log13_Size}
+\caption{\label{fig:MaxForce_Log13_Size}Variation of maximum force magnitude with log size for Log13.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog13_V} and \ref{fig:S1LLog13_V} show comparison of PDFs of magnitude of forces on Log13 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/S0p5LLog13_V}
+\caption{\label{fig:S0p5LLog13_V}Comparison of PDFs of forces on Log13 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/S1LLog13_V}
+\caption{\label{fig:S1LLog13_V}Comparison of PDFs of forces on Log13 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log13_V}, \ref{fig:MedianForce_Log13_V}, and \ref{fig:MaxForce_Log13_V} show variation of mean, median, and maximum of magnitude of force on Log13 at different flow velocities. Both mean and maximum force show an increasing trend with velocity. The variation is quadratic. median force shows inconsistent behavior.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MeanForce_Log13_V}
+\caption{\label{fig:MeanForce_Log13_V}Variation of mean force magnitude with flow velocity for Log13.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MedianForce_Log13_V}
+\caption{\label{fig:MedianForce_Log13_V}Variation of median force magnitude with flow velocity for Log13.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log13/MaxForce_Log13_V}
+\caption{\label{fig:MaxForce_Log13_V}Variation of maximum force magnitude with flow velocity for Log13.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log14}
+This is the log that is injected from location 14 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 13 and 15. Log14 impacts head on with RDDP and imparts the maximum force on RDDP.\\ 
+Figure \ref{fig:V0p5Log14_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log14 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/V0p5Log14_Size}
+\caption{\label{fig:V0p5Log14_Size}Comparison of PDFs of forces on Log14 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log14_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log14 of size 1L has higher probability of force being around the mean than that of size 0.5L. Log14 of size 0.5L has higher probability of large and small forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/V1p0Log14_Size}
+\caption{\label{fig:V1p0Log14_Size}Comparison of PDFs of forces on Log14 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log14_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Log14 of size 0.5L has higher probability of force being around the mean.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/V2p0Log14_Size}
+\caption{\label{fig:V2p0Log14_Size}Comparison of PDFs of forces on Log14 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log14_Size}, \ref{fig:MedianForce_Log14_Size}, and \ref{fig:MaxForce_Log14_Size} show variation of mean, median, and maximum of magnitude of force on Log14 at different log sizes. Mean, median and maximum forces fairly remains constant for V = 0.5 m/s and V = 1 m/s but increases with size for V = 2.0 m/s.This behavior may be due high momentum of the log for V  = 2.0 m/s. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MeanForce_Log14_Size}
+\caption{\label{fig:MeanForce_Log14_Size}Variation of mean force magnitude with log size for Log14.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MedianForce_Log14_Size}
+\caption{\label{fig:MedianForce_Log14_Size}Variation of median force magnitude with log size for Log14.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MaxForce_Log14_Size}
+\caption{\label{fig:MaxForce_Log14_Size}Variation of maximum force magnitude with log size for Log14.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog14_V} and \ref{fig:S1LLog14_V} show comparison of PDFs of magnitude of forces on Log14 of two sizes at different flow velocities. For log of size 0.5L, probability of force being around the mean is high for V = 0.5 m/s. PDFs for V = 1 m/s and V = 2 m/s are similar but range of forces for V = 1 m/s is large. When the log impacts RDDP with flow velocity V = 2 m/s, the area in contact with RDDP is small compared to that in the case of V = 1 m/s. This is the reason, the range of forces is larger for V = 1m/s case. For log of size 1L, the variation is more consistent with that observed for other logs. As the velocity increases, the probability of high forces increases.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/S0p5LLog14_V}
+\caption{\label{fig:S0p5LLog14_V}Comparison of PDFs of forces on Log14 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/S1LLog14_V}
+\caption{\label{fig:S1LLog14_V}Comparison of PDFs of forces on Log14 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log14_V}, \ref{fig:MedianForce_Log14_V}, and \ref{fig:MaxForce_Log14_V} show variation of mean, median, and maximum of magnitude of force on Log14 at different flow velocities. Mean force increases with velocity for log of size 1L, while it remains fairly constant for log of size 0.5L. A similar behavior is observed for median force as well. Maximum force increases with velocity for log of size 1L, while it increases at first for log of size 0.5L and then decreases. This is again due to the amount of area that is in contact with RDDP during the impact. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MeanForce_Log14_V}
+\caption{\label{fig:MeanForce_Log14_V}Variation of mean force magnitude with flow velocity for Log14.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MedianForce_Log14_V}
+\caption{\label{fig:MedianForce_Log14_V}Variation of median force magnitude with flow velocity for Log14.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log14/MaxForce_Log14_V}
+\caption{\label{fig:MaxForce_Log14_V}Variation of maximum force magnitude with flow velocity for Log14.}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Log15}
+This is the log that is injected from location 15 as shown in Figure \ref{fig:Log_Positions}. This is inject along with logs 13 and 14. Log15 impacts head on with RDDP and imparts the maximum force on RDDP.\\ 
+Figure \ref{fig:V0p5Log15_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 0.5 m/s. Log15 of size 1L has higher probability of forces being around the mean than that for size 0.5L. Log of size 0.5L has higher probability of forces being large and small as well.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/V0p5Log15_Size}
+\caption{\label{fig:V0p5Log15_Size}Comparison of PDFs of forces on Log15 at V = 0.5 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V1p0Log15_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 1.0 m/s. Log15 of size 0.5L has higher probability of force being around the mean than that of size 1L. Log15 of size 1L has higher probability of large forces.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/V1p0Log15_Size}
+\caption{\label{fig:V1p0Log15_Size}Comparison of PDFs of forces on Log15 at V = 1.0 m/s.}
+\end{figure}
+
+\noindent Figure \ref{fig:V2p0Log15_Size} shows comparison of PDFs of magnitude of forces for different log sizes at V = 2.0 m/s. Log15 of size 0.5L has higher probability of force being around the mean while size 1L has high probability of large forces.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/V2p0Log15_Size}
+\caption{\label{fig:V2p0Log15_Size}Comparison of PDFs of forces on Log15 at V = 2.0 m/s.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log15_Size}, \ref{fig:MedianForce_Log15_Size}, and \ref{fig:MaxForce_Log15_Size} show variation of mean, median, and maximum of magnitude of force on Log15 at different log sizes. All three increase with log size.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MeanForce_Log15_Size}
+\caption{\label{fig:MeanForce_Log15_Size}Variation of mean force magnitude with log size for Log15.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MedianForce_Log15_Size}
+\caption{\label{fig:MedianForce_Log15_Size}Variation of median force magnitude with log size for Log15.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MaxForce_Log15_Size}
+\caption{\label{fig:MaxForce_Log15_Size}Variation of maximum force magnitude with log size for Log15.}
+\end{figure}
+
+\noindent Figures \ref{fig:S0p5LLog15_V} and \ref{fig:S1LLog15_V} show comparison of PDFs of magnitude of forces on Log15 of two sizes at different flow velocities. As the velocity increases, the probability of higher forces on log increases. The momentum of logs increases with velocities and so does the impact force.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/S0p5LLog15_V}
+\caption{\label{fig:S0p5LLog15_V}Comparison of PDFs of forces on Log14 of size 0.5L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/S1LLog15_V}
+\caption{\label{fig:S1LLog15_V}Comparison of PDFs of forces on Log15 of size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:MeanForce_Log15_V}, \ref{fig:MedianForce_Log15_V}, and \ref{fig:MaxForce_Log15_V} show variation of mean, median, and maximum of magnitude of force on Log14 at different flow velocities. Mean and maximum force increase with flow velocity. Median force increases with flow velocity for log size 1L, while it increases with size at first for log of size 0.5L and then decreases. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MeanForce_Log15_V}
+\caption{\label{fig:MeanForce_Log15_V}Variation of mean force magnitude with flow velocity for Log15.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MedianForce_Log15_V}
+\caption{\label{fig:MedianForce_Log15_V}Variation of median force magnitude with flow velocity for Log15.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Log15/MaxForce_Log15_V}
+\caption{\label{fig:MaxForce_Log15_V}Variation of maximum force magnitude with flow velocity for Log15.}
+\end{figure}
+
+\FloatBarrier
+\section{Interesting results}
+\FloatBarrier
+\subsection{Log positions and velocities}
+Apart from measuring forces on RDDP and logs, position and velocities of logs are also calculated throughout the flow domain. Figure \ref{fig:V1p01LLog6_PositionX_ForceMag} shows position in flow direction and corresponding force magnitude on Log6 as a function of time for the case: V = 1 m/s and Size 1L. Figure \ref{fig:V1p01LLog6_PositionZ_ForceMag} shows the same information but the position is in cross flow direction. Using this information, the position of log when in contact with RDDP can be identified. This information can be further used to analyze how log interacts with the length of RDDP and which part of RDDP experiences maximum force that can cause structural damage or fatigue force that can cause fatigue failure. Figure \ref{fig:V1p01LLog6_VelocityMag_ForceMag} shows velocity magnitude and force magnitude as a function of time for the same case. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/V1p01LLog6_PositionX_ForceMag}
+\caption{\label{fig:V1p01LLog6_PositionX_ForceMag}Position in flow direction and corresponding force magnitude of Log6 for the case: V = 1 m/s and Size 1L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/V1p01LLog6_PositionZ_ForceMag}
+\caption{\label{fig:V1p01LLog6_PositionZ_ForceMag}Position in cross-flow direction and corresponding force magnitude of Log6 as a function of time for the case: V = 1 m/s and Size 1L.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/V1p01LLog6_VelocityMag_ForceMag}
+\caption{\label{fig:V1p01LLog6_VelocityMag_ForceMag}Velocity magnitude and corresponding force magnitude of Log6 as a function of time for the case: V = 1 m/s and Size 1L.}
+\end{figure}
+
+\FloatBarrier
+\subsection{Correlation between forces in flow direction and cross-flow direction}
+While analyzing the forces on logs in the flow direction and the cross-flow direction, it was noted that there was a correlation between the forces in those directions. When the correlation coefficients were computed, it was noticed that it was positive for logs on the right side of RDDP (Log1, Log2, Log5, Log6, Log9, Log 10, and Log13) when viewed from top and negative for logs on the left side of RDDP (Log3, Log4, Log7, Log8, Log11, Log 12, and Log15). This means that for logs on the right side, when there is force in the positive x-direction (in the direction of flow) there is a force in the positive z-direction (cross-flow direction) and vice-versa. The fluid is pushing the logs forward and towards RDDP and RDDP is pushing the logs backwards and away from it. For logs on the left side this means that the flow is pushing the logs in the flow direction (positive x-direction) and towards RDDP (negative z-direction) while RDDP is pushing the logs backwards (negative x-direction) and away from it (positive z-direction). For Log14, the correlation coefficient is very small since it is a head on collision and the forces on both sides of the log in z-direction are fairly balanced.\\
+Another interesting fact that was discovered from this analysis was that the slope of linear fit to the correlation points had a slope between 35 degrees and 42 degrees. There were some outliers in the data that were eliminated since they did not fit the correlation observations. These outliers are believed to be result of the numerical errors and need further investigation. What was interesting was the slope of the line in degrees was very close to the opening angle of RDDP (angle between the pontoons) which is 39 degrees. If the outliers are carefully eliminated, it is believed that the slope of the linear fit will be equal to the RDDP angle. This makes sense since the angle with respect to the x-direction at which the RDPD applies force on the log or the log applies force on the RDDP should be equal to the orientation or RDDP pontoons with x-direction. Figure \ref{fig:V1p0_1L_Log6} shows one example for correlation between the forces, the linear fit and it's slope. The data marked in red are the outliers in this case.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/V1p0_1L_Log6}
+\caption{\label{fig:V1p0_1L_Log6}Correlation between forces in the flow direction and cross-flow direction for Log6 for the case: V = 1 m/s and Size 1L.}
+\end{figure}

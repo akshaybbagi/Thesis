@@ -1,0 +1,171 @@
+%  ========================================================================
+%  Copyright (c) 1985 The University of Washington
+%
+%  Licensed under the Apache License, Version 2.0 (the "License");
+%  you may not use this file except in compliance with the License.
+%  You may obtain a copy of the License at
+%
+%      http://www.apache.org/licenses/LICENSE-2.0
+%
+%  Unless required by applicable law or agreed to in writing, software
+%  distributed under the License is distributed on an "AS IS" BASIS,
+%  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%  See the License for the specific language governing permissions and
+%  limitations under the License.
+%  ========================================================================
+%
+
+% Documentation for University of Washington thesis LaTeX document class
+% by Jim Fox
+% fox@washington.edu
+%
+%    Revised for version 2015/03/03 of uwthesis.cls
+%    Revised, 2016/11/22, for cleanup of sample copyright and title pages
+%
+%    This document is contained in a single file ONLY because
+%    I wanted to be able to distribute it easily.  A real thesis ought
+%    to be contained on many files (e.g., one for each chapter, at least).
+%
+%    To help you identify the files and sections in this large file
+%    I use the string '==========' to identify new files.
+%
+%    To help you ignore the unusual things I do with this sample document
+%    I try to use the notation
+%       
+%    % --- sample stuff only -----
+%    special stuff for my document, but you don't need it in your thesis
+%    % --- end-of-sample-stuff ---
+
+
+%    Printed in twoside style now that that's allowed
+%
+ 
+\documentclass [11pt, proquest] {uwthesis}[2016/11/22]
+
+\usepackage{graphicx}
+
+%
+% The following line would print the thesis in a postscript font 
+
+% \usepackage{natbib}
+% \def\bibpreamble{\protect\addcontentsline{toc}{chapter}{Bibliography}}
+
+\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
+ 
+
+% ==========   Local defs and mods
+%
+
+% --- sample stuff only -----
+% These format the sample code in this document
+
+\usepackage{alltt}  % 
+\newenvironment{demo}
+  {\begin{alltt}\leftskip3em
+     \def\\{\ttfamily\char`\\}%
+     \def\{{\ttfamily\char`\{}%
+     \def\}{\ttfamily\char`\}}}
+  {\end{alltt}}
+ 
+% metafont font.  If logo not available, use the second form
+%
+% \font\mffont=logosl10 scaled\magstep1
+\let\mffont=\sf
+% --- end-of-sample-stuff ---
+ 
+
+
+
+\begin{document}
+ 
+% ==========   Preliminary pages
+%
+% ( revised 2012 for electronic submission )
+%
+
+\prelimpages
+ 
+%
+% ----- copyright and title pages
+%
+\Title{Numerical Simulation of Debris Impact on a Hydrokinetic Infrastructure}
+\Author{Akshay Basavaraj Bagi}
+\Year{2017}
+\Program{Mechanical Engineering}
+
+\Chair{Dr. Alberto Aliseda}{Associate Professor}{Mechanical Engineering Department}
+\Signature{Dr. James J. Riley}
+\Signature{Dr. Dana Dabiri}
+
+
+\copyrightpage
+
+\titlepage  
+
+ 
+%
+% ----- signature and quoteslip are gone
+%
+
+%
+% ----- abstract
+%
+
+
+\setcounter{page}{-1}
+\abstract{%
+This research project studies the impacts of river debris on a hydro-kinetic infrastructure (Research Debris Diversion Platform - RDDP) by coupling Computational Fluid Dynamics (CFD) and Discrete Element Method (DEM).Debris under study are wooden logs that have been cut off from the trees and are floating in the river. The fluid in the computational domain is water, so this study only deals with the motion of debris under water and not above it. The flow is fully turbulent. The logs are injected at different times and from different locations. The impact forces on the RDDP and the logs are studied in these conditions. Further, the injection velocities of the logs and the lengths of the logs (maintaining the same volume) are also changed to study their effects on the forces. The objective is to get a statistical overview of the debris impact conditions in the river - what will be the forces on the RDDP when a log of a particular size, moving with a particular velocity, and coming from a particular location collides with it? This data can be further used to improve the design of the RDDP.
+}
+ 
+%
+% ----- contents & etc.
+%
+\tableofcontents
+\listoffigures
+\listoftables  % I have no tables
+ 
+
+%
+% ----- acknowledgments
+%
+\acknowledgments{% \vskip2pc
+  % {\narrower\noindent
+I am ever grateful to my advisor, Dr. Alberto Aliseda, who has been a great mentor, and someone I look up to. I have learned so much from him in my two years of study. I am also grateful to Dr. James Riley and Dr. Dana Dabiri for teaching me about fluid mechanics, fluid turbulence, and continuum mechanics. This knowledge has contributed considerable to my research. I am also grateful to them for agreeing to be on my committee. I would also like to thank Dr. Jeremy Kasper, Dr. Paul Duvoy and entire team at University of Alaska involved in this project for inviting me to collaborate and for providing all required information and materials. This work would not have been possible without the support of faculty and staff members of the University of Washington Mechanical Engineering Department. Last, I would like to thank my family and friends for all their support and encouragement. 
+  % \par}
+}
+
+%
+% ----- dedication
+%
+\dedication{\begin{center}To my dear mother, father, and sister\\ for their constant support and encouragement,\\ and their sacrifices which helped me achieve my dream. \end{center}}
+
+%
+% end of the preliminary pages
+ 
+ 
+ 
+%
+% ==========      Text pages
+%
+
+\textpages
+ 
+% ========== Chapter 1
+
+\include{Chapter1}
+
+\include{Chapter2}
+
+\include{Chapter3}
+
+\include{Chapter4}
+
+\include{Chapter5}
+%
+% ==========   Bibliography
+%
+\nocite{*}   % include everything in the uwthesis.bib file
+\bibliographystyle{plain}
+\bibliography{uwthesis}
+
+\end{document}
