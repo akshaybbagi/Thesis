@@ -1,0 +1,189 @@
+% Chapter 4
+
+\chapter{Results and Discussion} % Main chapter title
+
+\label{Chapter4} % For referencing the chapter elsewhere, use \ref{Chapter4}
+
+\section{Flow field analysis}
+Before injecting the logs, the flow field was analyzed. The flow field was simulated in STAR-CCM+ with DEM model turned off. Other flow field settings have been mentioned in Chapter \ref{Chapter3}. Water flow was simulated for 20 s of physical time.\\ 
+The velocity magnitude contour on a section that passes through center of submerged part of RDDP is shown in Figure \ref{fig:Vel_Mag_middle}. The flow accelerates around RDDP sweep. Water that is going below the sweep emerges behind it. There is a flow separation region behind the sweep and the pontoons. The velocity recovers behind the sweep. Corresponding pressure field is shown in Figure \ref{fig:Pressure_middle}. There is a stagnation point right in front of the RDDP sweep as expected. Water is brought to complete stop here.\\ 
+Vortices are shed from this region as shown in Figure \ref{fig:Vorticity_image}. Vorticity can also be seen along RDDP pontoons. There is a boundary layer developed on RDDP pontoons because of the no-slip wall boundary condition. This is the region where periodic vortices are being shed. The vortices diffuse far behind RDDP. Fast-Fourier transform of the velocity signal behind RDDP gives vortex shedding frequency of 0.6 Hz as shown in Figure \ref{fig:fft}. Vortices are being shed at every 1.6667 s. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Velocity_2}
+\caption{\label{fig:Vel_Mag_middle}Velocity Magnitude Contour on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Pressure_2}
+\caption{\label{fig:Pressure_middle}Pressure field on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Vorticity_2}
+\caption{\label{fig:Vorticity_Mag_middle}Vorticity Magnitude Contour on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/Vorticity_image}
+\caption{\label{fig:Vorticity_image}Vortices being shed from behind RDDP sweep.}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/fft2}
+\caption{\label{fig:fft}FFT analysis of velocity magnitude behind RDDP to obtain vortex shedding frequency.}
+\end{figure}
+
+\noindent Presence of vortices can also be seen from streamlines around RDDP as shown in Figure \ref{fig:Streamlines_middle_sideview}. The streamlines are originating from points on a section that passes through the center of RDDP. The streamlines are colored by velocity magnitude. Water at this level goes below the RDDP pontoons and starts to swirl up. Figure \ref{fig:Streamlines_middle_ISO} shows the same at an angle. Swirling up of water can be clearly seen. Figure \ref{fig:Streamlines_middle} shows the top view of the streamlines. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle_sideview}
+\caption{\label{fig:Streamlines_middle_sideview}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle_ISOview}
+\caption{\label{fig:Streamlines_middle_ISO}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_middle}
+\caption{\label{fig:Streamlines_middle}Streamlines around RDDP. Streamlines are originating from points on a section that passes through the center of RDDP.}
+\end{figure}
+
+
+\noindent Flow field near RDDP very close to top of the domain is slightly different from that at the middle of RDDP. Water doesn't tend to go below RDDP pontoons and curl up. The streamlines can be seen in Figure \ref{fig:Streamlines_top_sideview}. Water accelerates around the sweep and then flows along the pontoons as seen in Figure \ref{fig:Streamlines_top}. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_top_sideview}
+\caption{\label{fig:Streamlines_top_sideview}Streamlines around RDDP very close to top of the domain.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_top}
+\caption{\label{fig:Streamlines_top}Streamlines around RDDP very close to top of the domain.}
+\end{figure}
+
+\noindent Streamlines around an iso-surface of RDDP is shown in Figure \ref{fig:Streamlines_isosurface}. This iso-surface of RDDP is just a projection of RDDP at 0.05 m wall distance. This is not an actual surface. Water flows around the pontoons and occasionally goes below. A recirculation zone can be seen at the bottom of RDDP. Water recirculates there and then emerges from behind the sweep.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Streamlines_isosurface}
+\caption{\label{fig:Streamlines_isosurface}Streamlines on an iso-surface of RDDP.}
+\end{figure} 
+
+\newpage
+\section{Analysis of impact of logs on RDDP}
+Impact of logs (debris) on RDDP is now studied by turning on DEM settings on STAR-CCM+. Two sizes of logs (maintaining volume constant) are used for analysis. The lengths are 1 m and 2 m. For simplicity the lengths have been non-dimensionalized by diving the lengths with 2 m. The two cases now become 0.5L (1 m case) and 1L (2 m case). In addition to changing the log lengths, the flow velocity has also been varied in order: 0.5 m/s, 1 m/s and 2 m/s. Analysis is done for six combinations of log lengths and flow velocities as show in Table. Effects of log sizes and flow velocities on the forces on RDDP are studied.
+
+\begin{table}
+\centering
+\caption{Six combinations of log sizes and flow velocities of the analysis}
+\label{case combination}
+\begin{tabular}{|c|c|}
+\hline
+V = 0.5 m/s, Size: 0.5L & V = 0.5 m/s, Size: 1L \\ \hline
+V = 1.0 m/s, Size: 0.5L & V = 1.0 m/s, Size: 1L \\ \hline
+V = 2.0 m/s, Size: 0.5L & V = 2.0 m/s, Size: 1L \\\hline
+\end{tabular}
+\end{table}
+
+The logs are injected into the flow from fifteen locations upstream of RDDP as shown in Figure \ref{fig:Log_Positions}. These logs are of Size 1L. The numbering is to identify the log injection positions. Henceforth, the logs will be numbered according to their injection position numbers as shown in Figure \ref{fig:Log_Positions}. The positions are chosen to avoid logs piling up on each other. Logs are injected in pairs of four (pair of three for the last three logs) starting from logs 1, 2, 3, and 4. The pairs are injected at different times to avoid overlap of logs which might have resulted in logs not being injected. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RF/Log_Positions}
+\caption{\label{fig:Log_Positions}Positions of log injection.}
+\end{figure} 
+
+\subsection{Forces on RDDP}
+Forces on RDDP due to impact of logs are measured for all six cases. Force magnitude and it's components are measured. A probability distribution function (PDF) of force is obtained for each case. While analyzing the forces on RDDP, unusually high forces were recorded of order of mega newtons. Acceleration due such high force was more than 1000g, where g is the gravitational acceleration. This is clearly not practical and is a result of numerical error in the computation. The reason maybe due default and recommended high DEM time step (time step for calculating particle motion) of 0.2 s. With a high DEM time step, motion of the logs is not fully resolved and leads to higher acceleration of the logs. This results in a high force being calculated. These high forces have been filtered based on their acceleration. Different filters have been applied for different flow velocities. For $V = 0.5$ m/s, forces with acceleration greater than 1g are filtered. Forces greater than 1g in this case have a probability of nearly zero and thus are filtered. Since force (energy) is proportional to square of velocity, the filtering for higher velocities has been applied as a square of acceleration ratios. For $V = 1$ m/s, the filter is 4g and for $V = 2$ m/s, the filter is 16g. PDFs for each case are obtained after applying the filters. The PDFs are then compared to study the effect of log size and flow velocity on forces on RDDP.\\
+\subsubsection{Effect of log size on forces on RDDP}
+Effect of log size on forces on RDDP is studied. Two log sizes: 0.5L and 1L at three flow velocities are studied. Figure \ref{fig:RFSV0p5} shows the comparison of PDFs for force magnitude for different sizes when V = 0.5 m/s. As the size increases, the mean, median and max force increase. The probability of higher forces also increases with size. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V0p5_Size}
+\caption{\label{fig:RFSV0p5}Comparison of PDFs of force magnitude for two sizes and V = 0.5 m/s.}
+\end{figure} 
+
+\noindent Figure \ref{fig:RFSV1p0} shows effect of size on forces on RDDP for V = 1 m/s. The behavior is different from the earlier V = 0.5 m/s cases because the logs are injected at different times for both sizes to avoid overlap. Logs do not interact at the same time in both cases. Number of lofs impacting RDDP at any time is different in both cases. This causes the forces to be calculated at different times and the probability also changes. The median and max force increase with size but the variation is not large. Mean force is less for the higher size in this case. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V1p0_Size}
+\caption{\label{fig:RFSV1p0}Comparison of PDFs of force magnitude for two sizes and V = 1.0 m/s.}
+\end{figure} 
+
+\noindent Figure \ref{fig:RFSV2p0} shows effect of size on forces on RDDP for V = 2 m/s. The distributions are very similar to each other. There is a slight variation between the mean, median and max forces. This is again due to different injection times for the two sizes. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/V2p0_Size}
+\caption{\label{fig:RFSV2p0}Comparison of PDFs of force magnitude for two sizes and V = 2.0 m/s.}
+\end{figure} 
+
+\noindent Figures \ref{fig:RFMeanForce_Size}, \ref{fig:RFMedianForce_Size}, and \ref{fig:RFMaxForce_Size} show variation of mean, median, and maximum of force magnitude with size for different velocities respectively. It can be seen that the behavior is not consistent. This is due to different injection times for each case. The variation of mean, median, and maximum of force magnitude is not large between the two sizes. It is safe to say that changing the lengths of the logs while maintaining the volume constant has little effect on the forces on RDDP. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MeanForce_Size}
+\caption{\label{fig:RFMeanForce_Size}Variation of mean force magnitude with log size.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MedianForce_Size}
+\caption{\label{fig:RFMedianForce_Size}Variation of median force magnitude with log size.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/MaxForce_Size}
+\caption{\label{fig:RFMaxForce_Size}Variation of maximum force magnitude with log size.}
+\end{figure} 
+
+\subsubsection{Effect of flow velocity on forces on RDDP}
+Effect of three flow velocities on forces on RDDP  for two log sizes is studied. Flow velocities of 0.5 m/s, 1 m/s, and 2 m/s are used for this study.\\
+Figure \ref{fig:RFSize0p5L_V} shows comparison of PDFs of force magnitudes for three velocities with log size 0.5L. As the flow velocity increases, the probability of larger forces increases. The mean, median, and maximum of force magnitude also increases. As the flow velocity increases, the momentum of logs increases, this increases the impact forces on RDDP. The probability of smaller forces increases as the flow velocity decreases. A similar behavior is seen for log size 1L as shown in Figure \ref{fig:RFSize1L_V}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/Size0p5L_V}
+\caption{\label{fig:RFSize0p5L_V}Comparison of PDFs of force magnitude for Three velocities with log size 0.5L.}
+\end{figure} 
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/Size1L_V}
+\caption{\label{fig:RFSize1L_V}Comparison of PDFs of force magnitude for Three velocities with log size 1L.}
+\end{figure}
+
+\noindent Figures \ref{fig:RFMeanForce_Size}, \ref{fig:RFMedianForce_Size}, and \ref{fig:RFMaxForce_Size} show variation of mean, median, and maximum of force magnitude with flow velocity for different log sizes respectively. As explained earlier, as the flow velocity increases, the momentum of logs increases and so does the impact force. The variation is quadratic as kinetic energy squares with velocity. The mean, median, and maximum force magnitude increase with increasing flow velocity for both log sizes. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MeanForce_V}
+\caption{\label{fig:RDDP_MeanForce_V}Variation of mean force magnitude with flow velocity.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MedianForce_V}
+\caption{\label{fig:RDDP_MedianForce_V}Variation of median force magnitude with flow velocity.}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{RFSize/RDDP_MaxForce_V}
+\caption{\label{fig:RDDP_MaxForce_V}Variation of maximum force magnitude with flow velocity.}
+\end{figure}
+
+\subsection{Forces on logs}
+Forces calculated on logs include forces due to impact with RDDP and hydrodynamic forces. 
