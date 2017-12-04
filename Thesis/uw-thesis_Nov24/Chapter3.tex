@@ -1,0 +1,220 @@
+% Chapter 3
+
+\chapter{Numerical Methodology} % Main chapter title
+
+\label{Chapter3} % For referencing the chapter elsewhere, use \ref{Chapter3} 
+Computational Fluid Dynamics (CFD) is a numerical tool to visualize the fluid flow. The applications of CFD are innumerable. It has become on of the vital tools for industry and researchers. One can fully resolve the flow or use the limiting assumptions. Even though the computational power required is large, computers are being built to handle such numerically intense computations.\\
+Any CFD problem solution can be broken into three main elements \cite{Reference8}:
+\begin{enumerate}
+\item Pre-processor
+\item Solver
+\item Post-processor
+\end{enumerate}
+\textbf{Pre-processor}: This step involves defining the computational domain, generating the grid (or mesh), selection of physical and chemical phenomenon to be modeled, definition of fluid properties and specification of boundary conditions.\\
+\textbf{Solver}: This step (finite volume method) involves converting the integral or differential fluid equations into algebraic equations ans solving them to obtain the flow parameters. Conversion of integral/differential equations into algebraic equations is done using different approximations techniques.\\
+\textbf{Post-processor}: The solution obtained in the previous step is visualized and interpreted in this step. This step involves visualizing the domain, obtaining contour plots, particle tracking etc.
+\section{Pre-processor}
+\subsection*{Defining the computational domain}
+The coputational domain is shown in Figure \ref{fig:Domain}. Since this study is in collaboration with the AHERC, and this study compliments their fields tests, the computational domain was modeled to look like a river section. The riverbed is sloped to imitate a typical riverbed and look at it's effect on the flow. The front-view of the domain is shown in Figure \ref{fig:Inlet}. Due to this slope of the bed, the flow is asymmetrical. The RDDP is placed in the domain as shown in Figure \ref{fig:Domain}. It is far enough from the sides. The domain is long enough to capture diffusion of the vorticity generated. The flow is in x-direction.Dimensions of Domain are shown in figures \ref{fig:Domain_Dim_Top} and \ref{fig:Domain_Dim_Front}, and those of RDDP are shown in figures \ref{fig:RDDP_Dim_Top} and \ref{fig:RDDP_Dim_Side}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Domain}
+\caption{\label{fig:Domain}Isometric view of the domain.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Inlet}
+\caption{\label{fig:Inlet}Inlet of the domain.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Domain_Dim_Top}
+\caption{\label{fig:Domain_Dim_Top}Dimensions of Domain: Top View.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Domain_Dim_Front}
+\caption{\label{fig:Domain_Dim_Front}Dimensions of domain: Front View.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/RDDP_Dim_Top}
+\caption{\label{fig:RDDP_Dim_Top}Dimensions of RDDP: Top View.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/RDDP_Dim_Side}
+\caption{\label{fig:RDDP_Dim_Side}Dimensions of RDDP: Side View.}
+\end{figure}
+
+\subsection*{Generating the mesh}
+The computational domain is spatially discretized in which the governing flow equations are solved. The domain is divided into smaller cells or elements (control volumes). The governing equations are solved for these elements at their centers.\\
+The number of cells determines the accuracy of the solution. Higher the number of cells, finer the mesh, more accurate the solution. However, as the number of cells increases, the computational cost also increases. The solution takes longer to converge. So there is a middle ground where the mesh size isn't too big but fine enough to give an acceptable solution. 
+For this study, a structured mesh has been used. Structured mesh are preferred to limit excessive numerical diffusion. The mesh in the region of interest has to be fine in order to capture the solution accurately. The mesh elsewhere can be relatively coarser. In this study, the region of interest is the region around the RDDP where the logs interact with the RDDP and also the region behind the RDDP where the vortices are shed. This can be achieved using multiple structured grids in the region of interest and elsewhere as shown in Figure \ref{fig:Mesh_TopView}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Mesh_TopView}
+\caption{\label{fig:Mesh_TopView}Multiple structured meshes in the domain.}
+\end{figure}
+\noindent Trimmed cells have been used for meshing which are predominantly hexahedral cells. Trimmed cell mesher provides robust and efficient method of producing high quality meshes \cite{TrimmedCells}. Trimmed cell mesher has various advantages \cite{TrimmedCells}:
+\begin{itemize}
+\itemsep0em %reduces spacing between items
+\item minimal cell skewness
+\item offers custom refinement controls
+\item surface quality independence
+\end{itemize}
+A base size of $0.16$m has been specified. This base size acts as a reference size using which refinements can be specified. A mesh with this base size is generated in the entire domain. New volumes are created around the RDDP in which the refinements are to be made. Volume $2$ is created around the RDDP and the size of the cells is reduced to $30\%$ of the base size. To ensure a smooth transition between the two meshes, the region between them is automatically refined to avoid abrupt changes in cell sizes.\\
+Prism layers are used next to the RDDP walls to accurately capture the boundary layer. Prism layers contain orthogonal prismatic cells. Prism layers provide better cross-stream resolution without incurring an excessive stream-wise resolution \cite{PrismLayers}. Gradients of flow parameters are steep in the boundary layer and prism layers resolve these gradients accurately. Numerical diffusion is also reduced near the walls. The first cell height is $5$ mm. The total prism layer height is $50$ mm. These settings give $y^+$ in the range of 30 to 300. The significance of $y^+$ value is explained in Section \ref{PrismLayer}. The prism layers generated around the RDDP are shown in Figure \ref{fig:Prism_Layers}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Prism_Layers}
+\caption{\label{fig:Prism_Layers}rism Layers around the RDDP to capture the boundary layer accurately.}
+\end{figure}
+
+\noindent To accurately capture the geometry of the RDDP (the curvature), the core mesh that defines the RDDP geometry is also refined. This is achieved using \textit{Surface Remesher}. A target surface size of $25\%$ of the base size is specified. This controls the size of the cells on the RDDP surface. The curvature of the RDDP sweep is controlled by specifying the \textit{number of points per circle} which is $76$ in this case. This gives a smooth curvature to the RDDP sweep. The cell size growth rate is set to 1.2.\\
+Using the settings mentioned above a mesh is generated which has $3390955$ cells. This size is found to be sufficient to give accurate results. The total volume mesh is shown in Figure \ref{fig:Total_Mesh}. Figure \ref{fig:Mesh_Section} shows a section of the mesh at the center of the domain. The volume refinement and the prism layers around the RDDP sweep can be clearly seen.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Total_Mesh}
+\caption{\label{fig:Total_Mesh}Overall Mesh.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{Figures/Mesh_Section}
+\caption{\label{fig:Mesh_Section}A section of the mesh at the center of the domain.}
+\end{figure}
+
+\subsection*{Defining the fluid properties}
+After the mesh is generated, the next step is to choose the fluid of study. Various commercial software offer different fluid option. The fluid properties like density viscosity, temperature etc., can be defined. For this study, the fluid is water at standard atmospheric condition. The flow is three-dimensional. Gravitational effects are also considered.
+
+\subsection*{Defining the boundary conditions}
+The top, side and bottom of the domain are set as ``Slip Walls''. Since the boundary layer effects on the side and bottom wall are not important in this study, these are set as slip walls so that there is no boundary layer generated. This saves computational cost and the mesh size. The inlet is set as ``Velocity Inlet''. The flow direction method is \textit{Boundary Normal}. The velocity is 1 m/s in x-direction. The outlet is set as ``Pressure Outlet''. The value of pressure is 0.0 Pa gage. The RDDP wall is set as ``No-Slip Wall''. This leads to development of boundary layer which is important for this study. The boundary conditions are shown in Figures \ref{fig:BC_Top} and \ref{fig:BC_Front}.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/BC_Top_Edit}
+\caption{Top View of the domain with boundary conditions}\label{fig:BC_Top}
+\bigbreak
+\includegraphics[width=0.8\textwidth]{Figures/BC_Front_Edit}
+\caption{Front View of the domain with boundary conditions}\label{fig:BC_Front}
+\end{figure}
+
+\section{Solver}\label{Solver}
+This study uses finite volume method (FVM) to discretize the integral equations into algebraic equations. The equations to be solved for this flow are conservation of mass and conservation of momentum (Navier-Stokes equations). The solution of these equations for a turbulent flow is the hardest since the velocity fields are very chaotic over a large range of temporal and spatial scales. Direct numerical simulation will resolve these fluctuations fully but is computationally very expensive and so far only simple flows have been solved using this method. We do not yet have the computational power to solve complex problems with this method. One solution to this is to use Reynolds Averaging to resolve the flows. In this method, the velocity components are decomposed into their mean and fluctuating components. This process of decomposition is known as \textit{Reynolds Decomposition} \cite{Reference9}:
+Reynolds Decomposition of a scalar variable $\phi$
+\begin{equation}
+\phi = \overline{\phi} + \phi^\prime
+\end{equation}
+When this scalar variable is velocity, Reynolds decomposition of velocity becomes
+\begin{equation}
+\vec{U} = \overline{\vec{U}} + \vec{u}^\prime
+\end{equation}
+Using this method for conservation equations for an incompressible flow gives:
+Conservation of mass
+\begin{equation}
+\nabla \cdot \vec{U} = 0; \nabla \cdot \vec{u}^\prime = 0 \label{mass_cons_Re}
+\end{equation}
+Conservation of momentum
+\begin{equation}
+\frac{D \overline{U_i}}{Dt} = \nu \nabla^2 \bar{U_i} - \frac{\partial(\overline{u_i^\prime u_j^\prime})}{\partial x_j} - \frac{1}{\rho} \frac{\partial \overline{p}}{\partial x_i} \label{mom_cons_Re}
+\end{equation}
+Equations \ref{mass_cons_Re} and \ref{mom_cons_Re} are the Unsteady Reynolds Averaged Navier Stokes (URANS) equations. By using Reynolds Decomposition a new term $\overline{u_i^\prime u_j^\prime}$ is introduced. This term is known as Reynolds Stress term. This is a tensor and has nine components. These nine new terms render the above set of equations unsolvable. A turbulence closure model is required introduce new equations  to solve the system of equations. 
+\subsection{Turbulence Closure Models}
+Various turbulence closure models have been developed with their own merits and demerits. Each model has a specific application because of this. Most commonly used models are the $k-\epsilon$ model and the $k-\omega$ model. Each model predicts the Reynolds stress terms $\overline{u_i^\prime u_j^\prime}$ to solve the system of equations described in the previous section.\\
+The $k-\epsilon$ and $k-\omega$ models are two-equation turbulence closure models. The underlying assumption is that there exists a relation between the viscous stresses and Reynolds stresses on the mean flow.\\ 
+The $k-\epsilon$ model introduces two equations: one for turbulent kinetic energy $k$ and another for rate of dissipation of turbulent kinetic energy $\epsilon$. Advantages of this method are it works great for free shear flows \cite{Reference8}. It does not perform well for weak shear flows like far wakes and mixing layers, and swirling flows. It fails to resolve wall bounded flows and adverse pressure gradients in the flow \cite{Reference8}. It also introduces a numerical stiffness in the solution in the viscous sub-layer. To overcome this issue, Wilcox introduced a new model where he considered turbulence frequency $\omega$ as the second variable instead of $\epsilon$ \cite{Reference8}. The viscous near-wall treatment of this model is superior to the $k-\epsilon$ model. It also accounts well for the effects of stream-wise pressure gradients \cite{Reference9}. However, this model fails for external aerodynamics and aerospace applications as the results strongly depend on the assumed free stream value of $\omega$ \cite{Reference8}.\\
+To overcome the  shortcomings of $k-\epsilon$ and $k-\omega$ models, Menter developed a hybrid model that acts as $k-\omega$ in the near wall region and $k-\epsilon$ model in the fully turbulent region far from the wall \cite{Reference8}. This is achieved by implementing a blending function in the $\omega$ equation. The blending function is zero close to the wall (the model behaves as $k-\omega$ model) and away from the walls the function is unity (the model behaves as $k-\epsilon$ model).This model is called Shear Stress Transport $k-\omega$ model (SST $k-\omega$) \cite{Reference9}.\\
+The performance of SST $k-\omega$ model is superior in adverse pressure gradient flows, free shear flows and zero pressure gradient flows. It is used for most general purpose CFD problems. This study uses the SST $k-\omega$ model for solution of RANS equations using the commercial software STAR-CCM+ V12. The default parameters for the turbulence model provided by STAR-CCM+ have been used.
+\subsection{Near Wall Modeling}\label{PrismLayer}
+Walls are a source of turbulence and vorticity in the flow. The no-slip boundary condition imposes high sear in the flow and it's affect on the velocity must be captured by the model. The Region close to wall can be divided into different sub-layers. A non-dimensional wall distance can be defined to characterize each sub layers. This non-dimensional wall distance is called the \textit{y plus} and denoted as $y^+$.
+\begin{equation}
+y^+ = \frac{u_\tau y}{\nu} \label{y plus}
+\end{equation}
+Where $u_\tau$ is the friction velocity, y is the nearest wall distance, and $\nu$ is the kinematic viscosity.\\
+ Very close to the wall is the \textit{viscous sub-layer}. In this layer the viscous effects dominate the flow. The fluid velocity at the solid surface is zero. Turbulent eddying motions also stop close to the wall. This layer is practically very thin ($y^+ < 5$) \cite{Reference8}. In the layer outside the viscous sub-layer ($30 < y^+ < 300$) turbulent (Reynolds) stresses dominate. This layer is called the \textit{log-law layer} \cite{Reference8}. There is \textit{buffer layer} ($5 < y^+ < 30$) between the viscous sub-layer and the log-law layer. In this region, both viscous and Reynolds stresses are of similar magnitude \cite{Reference8}.\\
+It is very important to capture the effects of viscous and inertial forces in these regions. The physical transport in these regions occurs on a much smaller scale compared to other length scales in the flow. This necessitates having a high resolution mesh in these regions for an accurate solution.\\
+The flow in these regions can be modeled using two different approaches. One method is to completely resolve the viscous sub-layer. This approach is known as ``near-wall modeling" approach or ``low-$y^+$" approach. The mesh resolution required is very high. This method is computationally very expensive. Other approach is to use wall-functions to model the viscous sub-layer and the buffer layer. Here, these tow regions are not resolved and modeled using the wall-functions. This method is called ``wall-function" approach or ``high-$y^+$'' approach. For this approach the mesh resolution leads to $y^+$ in the range $30< y^+ 300$. In this study ``high-$y^+$'' approach has been used.\\
+
+\subsection{Discrete Element Method}
+The discrete element method (DEM) was established by Cundall and Strack \cite{Reference10} and is an extension of Lagrangian modeling methodology to include dense particle flows. Lagrangian multiphase models are used to design and track the flow path of dispersed particles in a continuous phase \cite{Lagrangian}. A Lagrangian frame of reference describes the path of the particles as they traverse the domain. Equations of motion are written for each individual particle. Individual particles are not resolved on the Eulerian field but the interaction of the phases are modeled \cite{Lagrangian}.\\
+The interaction between the Lagrangian and the Eulerian phase can be modeled in two ways. In the first method, the Eulerian phase parameters are not affected by the presence of the Lagrangian phase. This is called ``One-way Coupling''. In the other method, each phase has an influence on the other. This method is called ``Two-way Coupling''. In the current study, One-way coupling is used.\\
+STAR-CCM+ uses Lagrangian-Eulerian approach where the conservation equations for the dispersed phase are written for individual particle n Lagrangian form allowing tracking of each particle. The conservation equations for the continuous phase are written in Eulerian form and are modified to take into account the presence of dispersed phase \cite{Lagrangian}.\\
+In this study, Haider and Levenspiel drag force model is used to model the drag force on the particles. This method is used for non-spherical particles. The drag coefficient in this model depends on the particle Reynolds number and the particle sphericity \cite{Lagrangian}
+\begin{equation}
+C_d = \frac{24}{Re_p} (1 + ARe_p^B) + \frac{C}{1 + \frac{D}{Re_p}} \label{Drag Coeff eq}
+\end{equation}
+where $\phi$ is the particle sphericity and:
+\begin{align*}
+A &= 8.1716e^{-4.0655\phi}\\
+B &= 0.0964+0.5565\phi\\
+C &= 73.690e^{−5.0746\phi}\\
+D &= 5.3780e^{6.2122\phi}\\
+\end{align*}
+STAR-CCM+ uses multiple sphere shapes to represent non-spherical shapes. The DEM model used is based on classical mechanics based on soft-particle formulation where particles are allowed to overlap \cite{DEM}. The contact force is proportional to the overlap, and material and geometric properties of the particle. The contact force model is based on the spring-dashpot model. The repulsive force pushing the particles apart is generated by the spring and the viscous damping is represented by the dashpot. The contact forces are modeled using the Hertz Mindlin No-slip contact model \cite{DEM}. This model is a variant of non-linear spring-dashpot model. This model is found to be computationally efficient \cite{DEM}. In this study, as the particle-particle  and particle-wall collisions are not expected to be perfectly elastic and linear, this model is used. In addition to this, a rolling friction coefficient is applied to the model using the Rolling Resistance model provided by STAR-CCM+ to model any rolling motion of the particles.\\
+The DEM model only simulates solid particles. STAR-CCM+ offers different types of solid particles like Spherical particles, Coarse Grain particles, Composite particles, Particle clumps, and Cylindrical particles. Of these, Composite particles are used in this study as the logs are non-spherical and half-cylinders. The composite particles model uses multiple spheres to represent a non-spherical shape. The spheres are joined together and fixed, and do not separate during simulation \cite{CompositeP}. Model of the composite particles (logs) used for this study is shown in Figure \ref{fig:Log_Geometry}. Using composite particles, various particle shapes can be created. \\
+Interaction of particles with wall boundaries can be set using the phase boundary. The \textbf{DEM Mode} option in the phase boundary models the interaction such that the particles contact and rebound off the boundary. The \textbf{Boundary Properties} specifies the material properties at the boundary. Theses properties influence how particle-boundary interactions behave. In this study, the material properties of oak wood are specified here: $\rho_{wood} = 600 kg/m^3$. The Young's modulus has been set to $1e^9$ Pa to reduce the numerical stiffness. Also this value of Young's modulus was sufficient to resolve the motion in 20,000 DEM time sub-steps. Increasing the Young's modulus led to numerical stiffness and logs did not move after being injected. In this study, one particle is injected from each location. The injection times are adjusted to avoid logs getting piled up on the RDDP.\\
+The Injectors used for this study are point injectors. Particle is injected at a position specified by the user which is also the position of the injector. The injection velocity, particle diameter, particle orientation, flow rate, and position can be specified. 
+\section{Evaluation Parameters}
+The simulations in this study are conducted using STAR-CCM+ V12. The governing equations  are solved using a cell-centered control-volume space discretization method. Implicit unsteady solver is used. Time step of $5e^{-4}$s is used and found to be appropriate for this study. For the DEM solver, collision time scale of 0.2 is used to resolve the motion  of the particles. Other solver parameters are given in table\\ \\ 
+\begin{tabular}{ |p{9cm}|p{7cm}|}
+ \hline
+ \multicolumn{2}{|c|}{STAR-CCM+ Solver Settings} \\
+ \hline
+ Turbulent Model& SST (Menter) $k-\omega$\\
+ Convection Scheme & Second Order\\
+ Transient Formulation & Implicit Unsteady Second Order\\
+ Flow Model   & Segregated\\
+ Gradient Method & Hybrid Gauss-LSQ\\
+ Limiter Method & Venkatakrishnan \\
+ Relaxation Scheme & Gauss-Seidel\\
+ $k-\omega$ Turbulence Under-relaxation Factor & 0.8\\
+ $k-\omega$ Turbulent Viscosity Under-relaxation Factor & 1\\
+ Pressure Under-relations Factor & 0.2\\
+ Velocity Under-relaxation Factor & 0.8\\
+ \hline
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% The mean velocity depends on the distance y from the wall, fluid density $\rho$, viscosity $\mu$ and shear wall stress $\tau_w$ \cite{Reference8}. So
+% \begin{equation}
+% U = f(y, \rho, \mu, \tau_w)
+% \end{equation}
+% Using dimensional analysis
+% \begin{equation}
+% u^+ = \frac{U}{u_\tau} = f(\frac{\rho y u_\tau}{\mu}) = f(y^+) \label{law of the wall}
+% \end{equation}
+% Equation \ref{law of the wall} is called \textbf{law of the wall}. The velocity scale is $u_\tau = \sqrt[]{\frac{\tau_w}{\rho}}$ which is known as friction velocity \cite{Reference8}.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+% Chapter 1
+
+\chapter{Background} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+The Alaska Power and Telephone (AP\&T) company initiated a project with the Alaska Hydrokinetic Energy Research Center (AHERC) to develop methods to avoid debris hazard \citep{Reference6}. The team at AHREC developed a Research Debris Diversion Platform (RDDP) to study the important factors involved in diverting debris around the RECs using the statistics of debris occurrence from its studies at AHERC's Tanana River Test Site at Nenana, Alaska.\\
+The RDDP consists of two steel pontoons joined in a wedge with its apex facing upstream (Figure \ref{fig:RDDP_first_image}). A vertical-axis freely rotating cylinder (1.1 m diameter) was placed at the leading edge of the wedge. The rotating cylinder initially had hinged vanes to help the rotation, but later was covered with plastic to reduce surface friction. The debris diverted by the RDDP follows a path along the edge of the wake produced by the RDDP.\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{RDDP_first_image}
+\caption{\label{fig:RDDP_first_image}The RDDP debris sweep (front cylinder) and pontoons with plastic sheet covering to reduce contact friction between the RDDP and debris. \citep{Reference6}.}
+\end{figure}
+\section{RDDP Design and Testing}
+\subsection{RDDP design modifications}
+Several modifications were made to the initial design of the RDDP including covering the pontoon surface with low-friction, high-density plastic (Figure \ref{fig:RDDP_first_image}), and adding solid ballast at the back of the RDDP \citep{Reference7}.\\
+The team at Alaska University has conducted field tests of RDDP to determine its effectiveness to divert debris away from the protected zone and it's effect on river turbulence \citep{Reference7}. The RDDP was moored to a buoy and the tether connecting the two ran parallel to the river surface. The mooring buoy helped in reorienting the debris lengthwise, parallel to the direction of the river current.\\
+During the initial deployment of RDDP in high river stage conditions, the platform tended to float with its debris sweep pitched down (Figure \ref{fig:RDDP_pitch_down}). This was due to the force of water against the debris sweep and upwelling of water at the rear of the debris sweep. Ballast plates were installed on the inside surface at the rear of the pontoons (Figure \ref{fig:Ballast_plates}). The necessary ballast was added, supplemented by filling the pontoon chambers with water.\\
+\begin{figure}
+%\centering
+\begin{minipage}{1\textwidth}
+\includegraphics[width=1\textwidth]{RDDP_pitch_down}
+\caption{\label{fig:RDDP_pitch_down}RDDP nose pitched down due to high river velocity before installing the ballast plates\citep{Reference6}.}
+\end{minipage}
+\begin{minipage}{1\textwidth}
+\includegraphics[width=0.5\textwidth]{Ballast_plates}
+\caption{\label{fig:Ballast_plates}RDDP Ballast plates \citep{Reference6}.}
+\end{minipage}
+\end{figure}
+The Alaska team conducted various field tests to determine the best opening angle between the RDDP pontoons. They conducted direct impact tests of the RDDP with the debris to determine the maximum impact forces on both the buoy and the RDDP, and to determine the most difficult conditions for clearing debris \citep{Reference7}. Debris of various cross sections up to 0.7 m and length up to 20 m were used for tests. Tree types included branches, logs, and twisted birch. The most efficient opening angle was found to be 58 degrees (to be verified with Alaska team) which could easily clear off such debris. Opening angles greater than this led to debris pinning against the pontoons and staying there for long times before clearing off.\\
+The team also conducted long-term deployments and used logs for the tests. The logs were towed to a position downstream of the buoy and released to impact the front end of RDDP. Initially, RDDP was covered with hinged vanes, they dug into the debris and the debris sweep had to rotate far enough to clear the debris. Also, the inertia of debris sweep was considerable as it is built to withstand large impact loads. This problem was avoided by covering the outer surface of the rotating cylinder with high-density low-friction plastic.\\
+After determining the parameters affecting the RDDP performance, and finalizing the design of the RDDP, it was decided to conduct a numerical study to complement the field tests. This study attempts to do the same. Debris impact on a simplified design of the RDDP (Figure \ref{fig:RDDP_Geometry}) is simulated using CD-Adapco's commercial CFD software - STAR-CCM+. The debris sweep is fixed and does not rotate. The RDDP is 2/3rd submerged under water. As a simplification, this study only considers the phenomena under water.  The portion of RDDP and the logs under water are dealt with here. The logs are modeled using Discrete Element Method. The logs are made up of several DEM particles. Only medium debris are considered for this study. Since the logs are floating and this study only deals with underwater phenomena, the logs are modeled as half-cylinders as shown in Figure \ref{fig:Log_Geometry}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.1\textwidth]{RDDP_Geometry}
+\caption{\label{fig:RDDP_Geometry}Simplified model of the RDDP for numerical study.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.1\textwidth]{Log_Geometry}
+\caption{\label{fig:Log_Geometry}Model of medium logs for numerical study.}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
